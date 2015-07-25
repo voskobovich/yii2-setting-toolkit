@@ -32,7 +32,9 @@
   "autoload": {
     "psr-4": {
       "voskobovich\\admin\\setting\\actions\\": "actions",
+      "voskobovich\\admin\\setting\\db\\": "db",
       "voskobovich\\admin\\setting\\forms\\": "forms",
+      "voskobovich\\admin\\setting\\migrations\\": "migrations",
       "voskobovich\\admin\\setting\\models\\": "models"
     }
   }
