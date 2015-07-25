@@ -8,7 +8,7 @@
     "panel"
   ],
   "homepage": "https://github.com/voskobovich/yii2-admin-setting-toolkit",
-  "type": "yii2-widget",
+  "type": "yii2-toolkit",
   "license": "MIT",
   "support": {
     "issues": "https://github.com/voskobovich/yii2-admin-setting-toolkit/issues",
