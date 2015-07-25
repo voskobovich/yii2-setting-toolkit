@@ -22,17 +22,17 @@ class IndexAction extends Action
      */
     public function run($section = 'general')
     {
-        $model = new IndexForm();
-        if (!$model->loadBySection($section)) {
+        $indexForm = new IndexForm();
+        if (!$indexForm->loadBySection($section)) {
             HttpError::the404('Setting section not found');
         }
 
         $params = Yii::$app->request->post();
 
         if ($params) {
-            $model->load($params, $model->formName());
+            $indexForm->load($params, $indexForm->formName());
 
-            if ($model->save()) {
+            if ($indexForm->save()) {
                 AlertHelper::success(Yii::t('backend', 'Saved successfully!'));
             } else {
                 AlertHelper::error(Yii::t('backend', 'Error saving!'));
@@ -42,7 +42,7 @@ class IndexAction extends Action
         $controller = $this->controller;
 
         return $controller->render('index', [
-            'model' => $model
+            'indexForm' => $indexForm
         ]);
     }
 }

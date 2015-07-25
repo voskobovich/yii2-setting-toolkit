@@ -5,13 +5,13 @@ use vova07\imperavi\Widget;
 /**
  * @var \yii\web\View $this
  * @var \voskobovich\admin\setting\models\Setting $settingModel
- * @var \voskobovich\admin\setting\forms\IndexForm $settingForm
+ * @var \voskobovich\admin\setting\forms\IndexForm $indexForm
  * @var \yii\widgets\ActiveForm $form
  */
 ?>
 
-<?php foreach ($settingForm->getSettings() as $key => $settingModel) : ?>
-    <?php $field = $form->field($settingForm, $key); ?>
+<?php foreach ($indexForm->getSettings() as $key => $settingModel) : ?>
+    <?php $field = $form->field($indexForm, $key); ?>
 
     <?php if ($settingModel->type == $settingModel::TYPE_TEXT_AREA): ?>
         <?php $field = $field->textarea(['rows' => 8]); ?>
