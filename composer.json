@@ -1,0 +1,39 @@
+{
+  "name": "voskobovich/yii2-admin-setting-toolkit",
+  "description": "Tools to create configuration section in the administration panel for Yii2",
+  "keywords": [
+    "admin",
+    "setting",
+    "yii2",
+    "panel"
+  ],
+  "homepage": "https://github.com/voskobovich/yii2-admin-setting-toolkit",
+  "type": "yii2-widget",
+  "license": "MIT",
+  "support": {
+    "issues": "https://github.com/voskobovich/yii2-admin-setting-toolkit/issues",
+    "source": "https://github.com/voskobovich/yii2-admin-setting-toolkit"
+  },
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "Vitaly Voskobovich",
+      "email": "vitaly@voskobovich.com",
+      "homepage": "http://voskobovich.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "yiisoft/yii2": "*",
+    "voskobovich/yii2-base-toolkit": "*",
+    "voskobovich/yii2-alert": "*",
+    "vova07/yii2-imperavi-widget": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "voskobovich\\admin\\setting\\actions\\": "actions",
+      "voskobovich\\admin\\setting\\forms\\": "forms",
+      "voskobovich\\admin\\setting\\models\\": "models"
+    }
+  }
+}
