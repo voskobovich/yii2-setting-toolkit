@@ -16,12 +16,18 @@ use yii\base\Action;
 class IndexAction extends Action
 {
     /**
-     * @param string $section
+     * @var string
+     */
+    public $defaultSection = 'general';
+
+    /**
      * @return string
      * @throws \yii\web\NotFoundHttpException
      */
-    public function run($section = 'general')
+    public function run()
     {
+        $section = Yii::$app->request->get('section', $this->defaultSection);
+
         $indexForm = new IndexForm();
         if (!$indexForm->loadBySection($section)) {
             HttpError::the404('Setting section not found');
