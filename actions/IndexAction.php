@@ -11,7 +11,7 @@ use yii\base\Action;
 
 /**
  * Class IndexAction
- * @package givoskobovich\admin\setting\actions
+ * @package voskobovich\admin\setting\actions
  */
 class IndexAction extends Action
 {
