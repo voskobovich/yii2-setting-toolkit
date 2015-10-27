@@ -222,16 +222,14 @@ class Setting extends ActiveRecord
             throw new Exception("Key {$section}.{$key} not found!");
         }
 
-        if (!empty($model)) {
-            $model->value = $value;
+        $model->value = $value;
 
-            if ($model->save()) {
-                if (!empty(Yii::$app->cache)) {
-                    Yii::$app->cache->delete(self::$cacheKey . '_' . $section . '_' . $key);
-                }
-
-                return true;
+        if ($model->save()) {
+            if (!empty(Yii::$app->cache)) {
+                Yii::$app->cache->delete(self::$cacheKey . '_' . $section . '_' . $key);
             }
+
+            return true;
         }
 
         return false;
