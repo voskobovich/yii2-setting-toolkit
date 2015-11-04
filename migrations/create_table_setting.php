@@ -2,10 +2,7 @@
 
 namespace voskobovich\admin\setting\migrations;
 
-use yii\db\Schema;
 use yii\db\Migration;
-
-defined('DB_QUOTE') or define('DB_QUOTE', '`');
 
 /**
  * Class create_table_setting
@@ -24,17 +21,18 @@ class create_table_setting extends Migration
         }
 
         $this->createTable($this->_tableName, [
-            'section' => Schema::TYPE_STRING . '(50) NOT NULL',
-            'key' => Schema::TYPE_STRING . '(50) NOT NULL',
-            'name' => Schema::TYPE_STRING . '(100) NOT NULL',
-            'hint' => Schema::TYPE_STRING,
-            'value' => Schema::TYPE_TEXT,
-            'type' => Schema::TYPE_SMALLINT,
-            'position' => Schema::TYPE_SMALLINT,
-            'variants' => Schema::TYPE_TEXT,
-            'rules' => Schema::TYPE_TEXT,
-            'PRIMARY KEY (' . DB_QUOTE . 'section' . DB_QUOTE . ', ' . DB_QUOTE . 'key' . DB_QUOTE . ')'
+            'section' => $this->string(50)->notNull(),
+            'key' => $this->string(50)->notNull(),
+            'name' => $this->string(100)->notNull(),
+            'hint' => $this->string(50),
+            'value' => $this->text(),
+            'type' => $this->smallInteger(),
+            'position' => $this->smallInteger(),
+            'variants' => $this->text(),
+            'rules' => $this->text()
         ], $tableOptions);
+
+        $this->addPrimaryKey('setting_section_key_pk', $this->_tableName, ['section', 'key']);
     }
 
     public function safeDown()
