@@ -3,7 +3,6 @@
 namespace voskobovich\admin\setting\actions;
 
 use voskobovich\admin\setting\forms\IndexForm;
-use voskobovich\alert\helpers\AlertHelper;
 use voskobovich\base\helpers\HttpError;
 use Yii;
 use yii\base\Action;
@@ -33,6 +32,16 @@ class IndexAction extends Action
     public $viewFile = '@vendor/voskobovich/yii2-admin-setting-toolkit/views/index.php';
 
     /**
+     * @var callable|null;
+     */
+    public $successCallback;
+
+    /**
+     * @var callable|null;
+     */
+    public $errorCallback;
+
+    /**
      * @return string
      * @throws \yii\web\NotFoundHttpException
      */
@@ -51,9 +60,17 @@ class IndexAction extends Action
             $model->load($params, $model->formName());
 
             if ($model->save()) {
-                AlertHelper::success(Yii::t('backend', 'Saved successfully!'));
+                if ($this->successCallback) {
+                    call_user_func($this->successCallback, $model);
+                } else {
+                    Yii::$app->session->setFlash('index:success');
+                }
             } else {
-                AlertHelper::error(Yii::t('backend', 'Error saving!'));
+                if ($this->errorCallback) {
+                    call_user_func($this->errorCallback, $model);
+                } else {
+                    Yii::$app->session->setFlash('index:error');
+                }
             }
         }
 
