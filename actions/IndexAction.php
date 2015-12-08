@@ -16,9 +16,21 @@ use yii\base\Action;
 class IndexAction extends Action
 {
     /**
+     * Menu Items
+     * @var array
+     */
+    public $menuItems = [];
+
+    /**
      * @var string
      */
     public $defaultSection = 'general';
+
+    /**
+     * View file
+     * @var string
+     */
+    public $viewFile = '@vendor/voskobovich/yii2-admin-setting-toolkit/views/index.php';
 
     /**
      * @return string
@@ -28,17 +40,17 @@ class IndexAction extends Action
     {
         $section = Yii::$app->request->get('section', $this->defaultSection);
 
-        $indexForm = new IndexForm();
-        if (!$indexForm->loadBySection($section)) {
+        $model = new IndexForm();
+        if (!$model->loadBySection($section)) {
             HttpError::the404('Setting section not found');
         }
 
         $params = Yii::$app->request->post();
 
         if ($params) {
-            $indexForm->load($params, $indexForm->formName());
+            $model->load($params, $model->formName());
 
-            if ($indexForm->save()) {
+            if ($model->save()) {
                 AlertHelper::success(Yii::t('backend', 'Saved successfully!'));
             } else {
                 AlertHelper::error(Yii::t('backend', 'Error saving!'));
@@ -47,8 +59,9 @@ class IndexAction extends Action
 
         $controller = $this->controller;
 
-        return $controller->render('index', [
-            'indexForm' => $indexForm
+        return $controller->render($this->viewFile, [
+            'model' => $model,
+            'menuItems' => $this->menuItems
         ]);
     }
 }
