@@ -82,7 +82,8 @@ class Setting extends ActiveRecord
     public function validatorIsArray($attribute)
     {
         if (!is_array($this->{$attribute})) {
-            $this->addError($attribute, Yii::t('setting', 'Must be array'));
+            $this->addError($attribute,
+                Yii::t('vendor/voskobovich/yii2-admin-setting-toolkit/models/setting', 'Must be array'));
         }
     }
 
@@ -92,15 +93,15 @@ class Setting extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'section' => Yii::t('setting', 'Section'),
-            'key' => Yii::t('setting', 'Key'),
-            'name' => Yii::t('setting', 'Name'),
-            'hint' => Yii::t('setting', 'Hint'),
-            'value' => Yii::t('setting', 'Value'),
-            'type' => Yii::t('setting', 'Input type'),
-            'variants' => Yii::t('setting', 'Variants'),
-            'rules' => Yii::t('setting', 'Rules'),
-            'position' => Yii::t('setting', 'Position'),
+            'section' => Yii::t('vendor/voskobovich/yii2-admin-setting-toolkit/models/setting', 'Section'),
+            'key' => Yii::t('vendor/voskobovich/yii2-admin-setting-toolkit/models/setting', 'Key'),
+            'name' => Yii::t('vendor/voskobovich/yii2-admin-setting-toolkit/models/setting', 'Name'),
+            'hint' => Yii::t('vendor/voskobovich/yii2-admin-setting-toolkit/models/setting', 'Hint'),
+            'value' => Yii::t('vendor/voskobovich/yii2-admin-setting-toolkit/models/setting', 'Value'),
+            'type' => Yii::t('vendor/voskobovich/yii2-admin-setting-toolkit/models/setting', 'Input type'),
+            'variants' => Yii::t('vendor/voskobovich/yii2-admin-setting-toolkit/models/setting', 'Variants'),
+            'rules' => Yii::t('vendor/voskobovich/yii2-admin-setting-toolkit/models/setting', 'Rules'),
+            'position' => Yii::t('vendor/voskobovich/yii2-admin-setting-toolkit/models/setting', 'Position'),
         ];
     }
 

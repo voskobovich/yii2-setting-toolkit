@@ -24,18 +24,18 @@
   ],
   "require": {
     "php": ">=5.4.0",
-    "yiisoft/yii2": "*",
-    "voskobovich/yii2-base-toolkit": "*",
-    "voskobovich/yii2-alert": "*",
-    "vova07/yii2-imperavi-widget": "*"
+    "yiisoft/yii2": "~2.0",
+    "voskobovich/yii2-base-toolkit": "~1.0",
+    "voskobovich/yii2-alert": "~1.0",
+    "vova07/yii2-imperavi-widget": "~1.0"
   },
   "autoload": {
     "psr-4": {
-      "voskobovich\\admin\\setting\\actions\\": "actions",
-      "voskobovich\\admin\\setting\\db\\": "db",
-      "voskobovich\\admin\\setting\\forms\\": "forms",
-      "voskobovich\\admin\\setting\\migrations\\": "migrations",
-      "voskobovich\\admin\\setting\\models\\": "models"
+      "voskobovich\\admin\\setting\\actions\\": "src/actions",
+      "voskobovich\\admin\\setting\\db\\": "src/db",
+      "voskobovich\\admin\\setting\\forms\\": "src/forms",
+      "voskobovich\\admin\\setting\\migrations\\": "src/migrations",
+      "voskobovich\\admin\\setting\\models\\": "src/models"
     }
   }
 }
