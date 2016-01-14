@@ -1,13 +1,13 @@
 <?php
 
-namespace voskobovich\admin\setting\migrations;
+namespace voskobovich\setting\migrations;
 
-use voskobovich\admin\setting\db\SettingsMigration;
-use voskobovich\admin\setting\models\Setting;
+use voskobovich\setting\db\SettingsMigration;
+use voskobovich\setting\models\Setting;
 
 /**
  * Class add_setting_base
- * @package voskobovich\admin\setting\migrations
+ * @package voskobovich\setting\migrations
  */
 class add_setting_base extends SettingsMigration
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace voskobovich\admin\setting\migrations;
+namespace voskobovich\setting\migrations;
 
 use yii\db\Migration;
 
 /**
  * Class create_table_setting
- * @package voskobovich\admin\setting\migrations
+ * @package voskobovich\setting\migrations
  */
 class create_table_setting extends Migration
 {

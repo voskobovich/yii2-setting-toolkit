@@ -1,8 +1,8 @@
 <?php
 
-namespace voskobovich\admin\setting\db;
+namespace voskobovich\setting\db;
 
-use voskobovich\admin\setting\models\Setting;
+use voskobovich\setting\models\Setting;
 use yii\db\Expression;
 use yii\db\Migration;
 

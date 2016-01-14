@@ -1,8 +1,8 @@
 <?php
 
-namespace voskobovich\admin\setting\actions;
+namespace voskobovich\setting\actions;
 
-use voskobovich\admin\setting\forms\IndexForm;
+use voskobovich\setting\forms\IndexForm;
 use voskobovich\base\helpers\HttpError;
 use Yii;
 use yii\base\Action;
@@ -10,7 +10,7 @@ use yii\base\Action;
 
 /**
  * Class IndexAction
- * @package voskobovich\admin\setting\actions
+ * @package voskobovich\setting\actions
  */
 class IndexAction extends Action
 {
@@ -29,7 +29,7 @@ class IndexAction extends Action
      * View file
      * @var string
      */
-    public $viewFile = '@vendor/voskobovich/yii2-admin-setting-toolkit/views/index.php';
+    public $viewFile = '@vendor/voskobovich/yii2-setting-toolkit/src/views/index.php';
 
     /**
      * @var callable|null;

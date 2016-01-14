@@ -1,8 +1,8 @@
 <?php
 
-namespace voskobovich\admin\setting\forms;
+namespace voskobovich\setting\forms;
 
-use voskobovich\admin\setting\models\Setting;
+use voskobovich\setting\models\Setting;
 use Yii;
 use yii\base\Model;
 use yii\helpers\Json;

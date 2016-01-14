@@ -4,8 +4,8 @@ use vova07\imperavi\Widget;
 
 /**
  * @var \yii\web\View $this
- * @var \voskobovich\admin\setting\models\Setting $settingModel
- * @var \voskobovich\admin\setting\forms\IndexForm $model
+ * @var \voskobovich\setting\models\Setting $settingModel
+ * @var \voskobovich\setting\forms\IndexForm $model
  * @var \yii\widgets\ActiveForm $form
  */
 ?>

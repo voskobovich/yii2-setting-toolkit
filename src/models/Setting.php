@@ -1,6 +1,6 @@
 <?php
 
-namespace voskobovich\admin\setting\models;
+namespace voskobovich\setting\models;
 
 use voskobovich\base\db\ActiveRecord;
 use Yii;
@@ -83,7 +83,7 @@ class Setting extends ActiveRecord
     {
         if (!is_array($this->{$attribute})) {
             $this->addError($attribute,
-                Yii::t('vendor/voskobovich/yii2-admin-setting-toolkit/models/setting', 'Must be array'));
+                Yii::t('vendor/voskobovich/yii2-setting-toolkit/models/setting', 'Must be array'));
         }
     }
 
@@ -93,15 +93,15 @@ class Setting extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'section' => Yii::t('vendor/voskobovich/yii2-admin-setting-toolkit/models/setting', 'Section'),
-            'key' => Yii::t('vendor/voskobovich/yii2-admin-setting-toolkit/models/setting', 'Key'),
-            'name' => Yii::t('vendor/voskobovich/yii2-admin-setting-toolkit/models/setting', 'Name'),
-            'hint' => Yii::t('vendor/voskobovich/yii2-admin-setting-toolkit/models/setting', 'Hint'),
-            'value' => Yii::t('vendor/voskobovich/yii2-admin-setting-toolkit/models/setting', 'Value'),
-            'type' => Yii::t('vendor/voskobovich/yii2-admin-setting-toolkit/models/setting', 'Input type'),
-            'variants' => Yii::t('vendor/voskobovich/yii2-admin-setting-toolkit/models/setting', 'Variants'),
-            'rules' => Yii::t('vendor/voskobovich/yii2-admin-setting-toolkit/models/setting', 'Rules'),
-            'position' => Yii::t('vendor/voskobovich/yii2-admin-setting-toolkit/models/setting', 'Position'),
+            'section' => Yii::t('vendor/voskobovich/yii2-setting-toolkit/models/setting', 'Section'),
+            'key' => Yii::t('vendor/voskobovich/yii2-setting-toolkit/models/setting', 'Key'),
+            'name' => Yii::t('vendor/voskobovich/yii2-setting-toolkit/models/setting', 'Name'),
+            'hint' => Yii::t('vendor/voskobovich/yii2-setting-toolkit/models/setting', 'Hint'),
+            'value' => Yii::t('vendor/voskobovich/yii2-setting-toolkit/models/setting', 'Value'),
+            'type' => Yii::t('vendor/voskobovich/yii2-setting-toolkit/models/setting', 'Input type'),
+            'variants' => Yii::t('vendor/voskobovich/yii2-setting-toolkit/models/setting', 'Variants'),
+            'rules' => Yii::t('vendor/voskobovich/yii2-setting-toolkit/models/setting', 'Rules'),
+            'position' => Yii::t('vendor/voskobovich/yii2-setting-toolkit/models/setting', 'Position'),
         ];
     }
 

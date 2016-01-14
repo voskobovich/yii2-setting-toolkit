@@ -7,7 +7,7 @@ use yii\widgets\Menu;
 
 /**
  * @var \yii\web\View $this
- * @var \voskobovich\admin\setting\forms\IndexForm $model
+ * @var \voskobovich\setting\forms\IndexForm $model
  * @var array[] $menuItems
  */
 
@@ -48,7 +48,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                             <button type="submit" class="btn btn-primary">
-                                <?= Yii::t('general', 'Update') ?>
+                                <?= Yii::t('vendor/voskobovich/yii2-setting-toolkit/models/setting', 'Update') ?>
                             </button>
                         </div>
                     </div>
