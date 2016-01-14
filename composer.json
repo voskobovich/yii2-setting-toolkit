@@ -2,10 +2,9 @@
   "name": "voskobovich/yii2-setting-toolkit",
   "description": "Tools to create configuration section in the for Yii2",
   "keywords": [
-    "admin",
     "setting",
     "yii2",
-    "panel"
+    "toolkit"
   ],
   "homepage": "https://github.com/voskobovich/yii2-setting-toolkit",
   "type": "yii2-toolkit",
