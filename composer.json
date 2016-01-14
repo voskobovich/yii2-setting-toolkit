@@ -14,7 +14,6 @@
     "issues": "https://github.com/voskobovich/yii2-admin-setting-toolkit/issues",
     "source": "https://github.com/voskobovich/yii2-admin-setting-toolkit"
   },
-  "minimum-stability": "dev",
   "authors": [
     {
       "name": "Vitaly Voskobovich",
