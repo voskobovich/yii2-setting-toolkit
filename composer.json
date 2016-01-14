@@ -29,11 +29,11 @@
   },
   "autoload": {
     "psr-4": {
-      "voskobovich\\admin\\setting\\actions\\": "src/actions",
-      "voskobovich\\admin\\setting\\db\\": "src/db",
-      "voskobovich\\admin\\setting\\forms\\": "src/forms",
-      "voskobovich\\admin\\setting\\migrations\\": "src/migrations",
-      "voskobovich\\admin\\setting\\models\\": "src/models"
+      "voskobovich\\setting\\actions\\": "src/actions",
+      "voskobovich\\setting\\db\\": "src/db",
+      "voskobovich\\setting\\forms\\": "src/forms",
+      "voskobovich\\setting\\migrations\\": "src/migrations",
+      "voskobovich\\setting\\models\\": "src/models"
     }
   }
 }
