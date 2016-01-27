@@ -11,7 +11,7 @@ use yii\widgets\Menu;
  * @var array[] $menuItems
  */
 
-$this->title = Yii::t('backend', 'Settings');
+$this->title = Yii::t('vendor/voskobovich/yii2-setting-toolkit/interface/setting', 'Settings');
 $this->params['breadcrumbs'][] = $this->title;
 
 ?>
