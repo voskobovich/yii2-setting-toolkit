@@ -6,14 +6,17 @@ use voskobovich\setting\db\SettingsMigration;
 use voskobovich\setting\models\Setting;
 
 /**
- * Class add_setting_google_analytics
+ * Class setting_section__code
  * @package voskobovich\setting\migrations
  */
-class add_setting_google_analytics extends SettingsMigration
+class setting_section__code extends SettingsMigration
 {
+    /**
+     * @var array
+     */
     protected $_rows = [
         [
-            self::FIELD_SECTION => 'ganalytics',
+            self::FIELD_SECTION => 'ga',
             self::FIELD_KEY => 'code',
             self::FIELD_NAME => 'Google analytics code',
             self::FIELD_VALUE => '',

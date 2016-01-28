@@ -10,7 +10,7 @@ use yii\helpers\Json;
 
 /**
  * Class IndexForm
- * @package app\forms
+ * @package voskobovich\setting\forms
  */
 class IndexForm extends Model
 {
@@ -19,6 +19,12 @@ class IndexForm extends Model
      * @var array
      */
     private $_settingModels = [];
+
+    /**
+     * Model className
+     * @var string
+     */
+    public $modelClass = 'voskobovich\setting\models\Setting';
 
     /**
      * @inheritdoc
@@ -95,8 +101,10 @@ class IndexForm extends Model
         }
 
         if (!$this->hasErrors()) {
+            /** @var Setting $model */
+            $model = $this->modelClass;
             foreach ($this->_settingModels as $key => $setting) {
-                Setting::set("{$setting->section}.{$key}", $setting->value);
+                $model::set("{$setting->section}.{$key}", $setting->value);
             }
 
             return true;
@@ -112,7 +120,9 @@ class IndexForm extends Model
      */
     public function loadBySection($section = 'general')
     {
-        $models = Setting::find()
+        /** @var Setting $model */
+        $model = $this->modelClass;
+        $models = $model::find()
             ->where(['section' => $section])
             ->indexBy('key')
             ->orderBy('position ASC')

@@ -32,6 +32,12 @@ class IndexAction extends Action
     public $viewFile = '@vendor/voskobovich/yii2-setting-toolkit/src/views/index.php';
 
     /**
+     * Model className
+     * @var string
+     */
+    public $modelClass = 'voskobovich\setting\models\Setting';
+
+    /**
      * @var callable|null;
      */
     public $successCallback;
@@ -49,7 +55,9 @@ class IndexAction extends Action
     {
         $section = Yii::$app->request->get('section', $this->defaultSection);
 
-        $model = new IndexForm();
+        $model = new IndexForm([
+            'modelClass' => $this->modelClass
+        ]);
         if (!$model->loadBySection($section)) {
             HttpError::the404('Setting section not found');
         }

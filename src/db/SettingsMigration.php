@@ -10,10 +10,16 @@ defined('DB_QUOTE') or define('DB_QUOTE', '`');
 
 /**
  * Class SettingsMigration
- * @package app\db
+ * @package voskobovich\setting\db
  */
 class SettingsMigration extends Migration
 {
+    /**
+     * Model className
+     * @var string
+     */
+    public $modelClass = 'voskobovich\setting\models\Setting';
+
     /**
      * Константы колонок
      */
@@ -40,7 +46,8 @@ class SettingsMigration extends Migration
     public function safeUp()
     {
         foreach ($this->_rows as $row) {
-            $model = new Setting();
+            /** @var Setting $model */
+            $model = new $this->modelClass();
 
             $model->setAttributes([
                 'section' => $row['section'],
@@ -97,11 +104,14 @@ class SettingsMigration extends Migration
      */
     public function safeDown()
     {
+        /** @var Setting $model */
+        $model = $this->modelClass;
+
         foreach ($this->_rows as $row) {
             $command = $this->db
                 ->createCommand()
                 ->delete(
-                    Setting::tableName(),
+                    $model::tableName(),
                     DB_QUOTE . 'section' . DB_QUOTE . ' = :section AND ' . DB_QUOTE . 'key' . DB_QUOTE . ' = :key',
                     [':section' => $row['section'], ':key' => $row['key']]
                 );
