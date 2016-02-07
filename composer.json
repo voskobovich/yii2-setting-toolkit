@@ -23,7 +23,7 @@
   "require": {
     "php": ">=5.4.0",
     "yiisoft/yii2": "~2.0",
-    "voskobovich/yii2-base-toolkit": "~1.0",
+    "voskobovich/yii2-base-toolkit": "~2.0",
     "voskobovich/yii2-alert": "~1.0",
     "vova07/yii2-imperavi-widget": "~1.0"
   },
