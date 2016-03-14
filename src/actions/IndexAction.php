@@ -23,7 +23,7 @@ class IndexAction extends Action
     /**
      * @var string
      */
-    public $defaultSection = 'general';
+    public $defaultSection;
 
     /**
      * View file
