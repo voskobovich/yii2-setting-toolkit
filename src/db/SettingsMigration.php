@@ -3,6 +3,7 @@
 namespace voskobovich\setting\db;
 
 use voskobovich\setting\models\Setting;
+use Yii;
 use yii\db\Expression;
 use yii\db\Migration;
 
@@ -47,7 +48,7 @@ class SettingsMigration extends Migration
     {
         foreach ($this->_rows as $row) {
             /** @var Setting $model */
-            $model = new $this->modelClass();
+            $model = Yii::createObject($this->modelClass);
 
             $model->setAttributes([
                 'section' => $row['section'],
